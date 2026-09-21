@@ -1,6 +1,9 @@
+
+
 #columnsContainer{
     display: flex;
     flex-direction: row;
     height: 400px;
     width: auto;
+    padding: 20px;
 }
