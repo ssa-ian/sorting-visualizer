@@ -17,10 +17,16 @@
         <div>
         <label> Length : </label>
         <input id="length" type="text">
+        <select id = "selection">
+        <option value="bubble">Bubble Sort</option>
+        <option value="merge">Merge Sort</option>
+        <option value="quick">Quick Sort</option>
+        </select>
         </div>
         
     </form>
-    <button id="startBtn">Start</button>  
+    
+    <button id="startBtn" onclick="btnClick()">Start</button>  
     <button id="generateBtn">Generate</button> 
     
     <div id="columnsContainer">
