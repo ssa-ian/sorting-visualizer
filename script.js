@@ -153,7 +153,7 @@ async function animatedQuickSort(numbers, min, max,speed){
         if(i === max-1){
             visualizeArray(nums, min + left.length)
         }else{
-            visualizeArray(nums)
+            visualizeArray(nums, -1, i)
         }
         
         await sleep(speed)
