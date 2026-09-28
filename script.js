@@ -130,6 +130,21 @@ await sleep(waitTime)
 visualizeArray(numbers)
 }
 
+async function stalinSort(numbers, waitTime){
+    for(let i = 0; i < numbers.length - 1; i++){
+        if(!run){
+            break
+        }
+        if(numbers[i] > numbers[i+1]){
+            visualizeArray(numbers, -1, i+1)
+            await sleep(waitTime)
+            numbers.splice(i+1, 1)
+            i--
+        }
+    }
+    visualizeArray(numbers)
+}
+
 async function animatedQuickSort(numbers, min, max,speed){
     if(!run){
         return;
@@ -227,6 +242,8 @@ async function btnClick(){
     }else if(c === "quick"){
         await animatedQuickSort(arrayToSort, 0, arrayToSort.length, speed)
         visualizeArray(arrayToSort)
+    }else if(c === "stalin"){
+        stalinSort(arrayToSort, speed)
     }
     
 }

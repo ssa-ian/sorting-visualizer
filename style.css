@@ -50,3 +50,11 @@ body{
     justify-content: center;
     border-bottom: 4px solid black;
 }
+
+.highlight{
+    background-color: rgb(174, 255, 174);
+}
+
+.highlightRed{
+    background-color: rgb(255, 174, 174);
+}

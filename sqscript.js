@@ -11,7 +11,7 @@ for (let i = 0; i < 10 ; i++){
     arrayQueue.push(Math.floor(Math.random() * 20))
 }
 
-function visualizeArray(array, type){
+function visualizeArray(array, type, highlight = -1, highlightRed = -1){
     if(type === types.STACK){
         document.getElementById('stackContainer').replaceChildren()
     } else if(type === types.QUEUE){
@@ -23,6 +23,12 @@ function visualizeArray(array, type){
     element.classList.add('element')
     if (index === 0){
         element.classList.add('first')
+    }
+    if(index === highlight){
+        element.classList.add('highlight')
+    }
+    if(index === highlightRed){
+        element.classList.add('highlightRed')
     }
     const valueDiv = document.createElement('div')
     valueDiv.classList.add('elementChild')
@@ -41,26 +47,33 @@ function visualizeArray(array, type){
 }
 
 function push(){
-    arrayStack.push(Math.floor(Math.random() * 20))
-    
-    visualizeArray(arrayStack, types.STACK)
+    arrayStack.push(document.getElementById('pushInput').value)
+
+    visualizeArray(arrayStack, types.STACK, arrayStack.length - 1)
 }
 
 function pop(){
+    visualizeArray(arrayStack, types.STACK, -1, arrayStack.length - 1)
     arrayStack.pop()
-    document.getElementById('stackContainer').replaceChildren()
-    visualizeArray(arrayStack, types.STACK)
+    
+    setTimeout(() => {
+        document.getElementById('stackContainer').replaceChildren()
+        visualizeArray(arrayStack, types.STACK)
+    }, 500)
 }
 
 function enqueue(){
-    arrayQueue.push(Math.floor(Math.random() * 20))
-    visualizeArray(arrayQueue, types.QUEUE)
+    arrayQueue.push(document.getElementById('enqueueInput').value)
+    visualizeArray(arrayQueue, types.QUEUE, arrayQueue.length - 1)
 }
 
 function dequeue(){
+    visualizeArray(arrayQueue, types.QUEUE, -1,  0)
     arrayQueue.shift()
+    setTimeout(() => {
     document.getElementById('queueContainer').replaceChildren()
-    visualizeArray(arrayQueue, types.QUEUE)
+    
+    visualizeArray(arrayQueue, types.QUEUE)}, 500)
 }
 visualizeArray(arrayStack, types.STACK)
 visualizeArray(arrayQueue, types.QUEUE)
