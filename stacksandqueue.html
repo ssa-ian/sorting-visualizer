@@ -23,8 +23,11 @@
             <div style = "display: flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
                 <h1 style = "display: block;">Stack</h1>
                 <div style = "display : flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
-                    <button id="enqueueBtn" onclick="push()">Push</button>
-                    <button id="dequeueBtn" onclick="pop()">Pop</button>
+                    <form>
+                        <input id = "enqueueInput" type="text">
+                    </form>
+                    <button  onclick="push()">Push</button>
+                    <button  onclick="pop()">Pop</button>
                 </div>
                 
             </div>
@@ -35,12 +38,20 @@
             <div style = "display: flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
                 <h1 style = "display: block;">Queue</h1>
                 <div style = "display : flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
-                    <button id="enqueueBtn" onclick="enqueue()">Enqueue</button>
-                <button id="dequeueBtn" onclick="dequeue()">Dequeue</button>
+                    <form>
+                        <input id = "enqueueInput" type="text">
+                    </form>
+                    <button id="btn" onclick="enqueue()">Enqueue</button>
+                <button id="btn" onclick="dequeue()">Dequeue</button>
                 </div>
                 
             </div>
             
+            <div style = "display: flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
+                <h2>Front</h2>
+                <h2>Rear </h2>
+            </div>
+
             <div id = "queueContainer" class = elementContainer>
                 
             </div>

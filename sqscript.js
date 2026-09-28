@@ -1,4 +1,5 @@
-const array = [];
+const arrayStack = [];
+const arrayQueue = [];
 
 const types = Object.freeze({
     STACK: 'stack',
@@ -6,7 +7,8 @@ const types = Object.freeze({
 })
 
 for (let i = 0; i < 10 ; i++){
-    array.push(Math.floor(Math.random() * 20))
+    arrayStack.push(Math.floor(Math.random() * 20))
+    arrayQueue.push(Math.floor(Math.random() * 20))
 }
 
 function visualizeArray(array, type){
@@ -28,12 +30,7 @@ function visualizeArray(array, type){
     valueDiv.style.width = "100%"
     valueDiv.appendChild(document.createTextNode(value))
     const indexDiv = document.createElement('div')
-    indexDiv.classList.add('elementChild')
-    indexDiv.style.flex = "1"
-    indexDiv.style.width = "100%"
-    indexDiv.appendChild(document.createTextNode(index))
     element.appendChild(valueDiv)
-    element.appendChild(indexDiv)
     if (type === types.STACK) {
         document.getElementById('stackContainer').appendChild(element)
     } else if (type === types.QUEUE) {
@@ -44,33 +41,29 @@ function visualizeArray(array, type){
 }
 
 function push(){
-    array.push(Math.floor(Math.random() * 20))
+    arrayStack.push(Math.floor(Math.random() * 20))
     
-    visualizeArray(array, types.STACK)
-    visualizeArray(array, types.QUEUE)
+    visualizeArray(arrayStack, types.STACK)
 }
 
 function pop(){
-    array.pop()
+    arrayStack.pop()
     document.getElementById('stackContainer').replaceChildren()
-    visualizeArray(array, types.STACK)
-    visualizeArray(array, types.QUEUE)
+    visualizeArray(arrayStack, types.STACK)
 }
 
 function enqueue(){
-    array.push(Math.floor(Math.random() * 20))
-    visualizeArray(array, types.QUEUE)
-    visualizeArray(array, types.STACK)
+    arrayQueue.push(Math.floor(Math.random() * 20))
+    visualizeArray(arrayQueue, types.QUEUE)
 }
 
 function dequeue(){
-    array.shift()
+    arrayQueue.shift()
     document.getElementById('queueContainer').replaceChildren()
-    visualizeArray(array, types.QUEUE)
-    visualizeArray(array, types.STACK)
+    visualizeArray(arrayQueue, types.QUEUE)
 }
-visualizeArray(array, types.STACK)
-visualizeArray(array, types.QUEUE)
+visualizeArray(arrayStack, types.STACK)
+visualizeArray(arrayQueue, types.QUEUE)
 
 
 
