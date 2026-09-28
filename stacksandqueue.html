@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link type="image/png" sizes="32x32" rel="icon" href="icons8-data-structure-16.png">
+</head>
+<body>
+    <nav>
+        <div>DSA Playground</div>
+        
+        <div>
+            <a href="stacksandqueue.html">Stacks and Queue</a>
+            <a href="sortingvisualizer.html">Sorting Visualizer</a>
+        </div>
+    </nav>
+
+    <p style = "text-align: center;">Queue is <strong>FIFO</strong> (First In, First Out), Stack is <strong>LIFO</strong> (Last In, First Out)</p>
+
+        <div style = "display: flex; justify-content: flex-start; flex-direction: column; align-items: left; height:fit-content; margin-bottom: 5px;">
+            <div style = "display: flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
+                <h1 style = "display: block;">Stack</h1>
+                <div>
+                    <button id="enqueueBtn" onclick="push()">Push</button>
+                <button id="dequeueBtn" onclick="pop()">Pop</button>
+                </div>
+                
+            </div>
+            <div id = "stackContainer" class = elementContainer></div>
+        </div>
+
+        <div>
+            <div style = "display: flex; justify-content: space-between; align-items: center; height:50-px; margin-bottom: 10px;">
+                <h1 style = "display: block;">Queue</h1>
+                <div>
+                    <button id="enqueueBtn" onclick="enqueue()">Enqueue</button>
+                <button id="dequeueBtn" onclick="dequeue()">Dequeue</button>
+                </div>
+                
+            </div>
+            
+            <div id = "queueContainer" class = elementContainer>
+                
+            </div>
+        </div>
+    
+    <script src = "sqscript.js"></script>
+</body>
+</html>
