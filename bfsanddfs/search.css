@@ -1,0 +1,44 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    width: auto;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+body{
+    background-color: white;
+    font-family: Arial, serif;
+}
+
+.rows{
+    height : 70px;
+    flex-direction : row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    display: flex;
+}
+
+.columns{
+    flex-direction: column;
+    display: flex;
+}
+
+.circle{
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+    border: black 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centeredrow{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    flex:1;
+}
