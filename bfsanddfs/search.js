@@ -76,7 +76,7 @@ async function visualizeTree(root){
 let initRoot = null
 
 const insert = async function(){
-    initRoot = await insertNode(initRoot, parseInt(document.getElementById("newNode").value))
+    initRoot = await insertNode(initRoot, parseFloat(document.getElementById("newNode").value))
     document.getElementById("tree").replaceChildren()
     await visualizeTree(initRoot)
 }
